@@ -1,0 +1,720 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* Adjust based on navbar height */
+}
+body {
+  line-height: 1.6; /* this gives each line 60% more height than the text itself */
+  color: #333;
+  background-color: #f9fbfd;
+  overflow-x: hidden;
+}
+header {
+  position: relative;
+  background-image: url("images/hero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  text-align: center;
+}
+.off-screen-menu {
+  display: none;
+}
+#mobile-nav {
+  display: none;
+}
+#desktop-nav {
+  background-color: #f9fbfd;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  box-shadow: 0 0 3px 3px #33333339;
+  z-index: 98;
+}
+.brightMind-logo img {
+  width: 200px;
+}
+.desktop-nav-links ul,
+.desktop-nav-links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+/* herobanner */
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.348);
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+.herobanner-intro {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  top: 40%;
+  left: 5rem;
+  z-index: 2;
+  max-width: 50%;
+}
+.herobanner-intro h1 {
+  font-size: 3rem;
+}
+.herobanner-intro p {
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+}
+.herobanner-intro a {
+  margin-top: 0.5rem;
+  padding: 0.5rem 5rem;
+  background-color: #4f8ef7;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 50%;
+}
+.container {
+  width: 100%;
+}
+
+/* ABOUT US SECTION */
+#about {
+  display: flex;
+  background-color: #4f8ef7;
+  color: #e3eaf5;
+  padding: 4rem 5rem;
+  max-width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+#about .about-container {
+  display: flex;
+  max-width: 1200px;
+  gap: 10rem;
+}
+#about h2 {
+  font-size: 1.8rem;
+  color: #f9fbfd;
+  margin-bottom: 1rem;
+}
+#about .about-left {
+  width: 100%;
+}
+#about .about-left .brightmind-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#about .about-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#about .about-right img {
+  margin-top: 5vh;
+  width: 100%;
+}
+/* === SERVICES === */
+#services {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  padding: 5rem;
+  max-width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+#services .services-title {
+  text-align: center;
+}
+#services h2 {
+  font-size: 1.8rem;
+  color: #4f8ef7;
+}
+#services .services-offered-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  justify-content: center;
+  margin-top: 3rem;
+  align-items: center;
+}
+#services .services-offered-container .services-offered-cards {
+  background-color: #e1ecfc;
+  border-radius: 15px;
+  width: 25rem;
+  height: 25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  transition: 0.3s ease-in-out;
+}
+#services .services-offered-container .services-offered-cards:hover {
+  box-shadow: 0 0 3px 3px #33333339;
+}
+#services .services-offered-container .services-offered-cards img {
+  width: 70%;
+}
+#services .services-offered-container .services-offered-cards p {
+  color: #4f8ef7;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-left: 0;
+}
+#services .services-offered-container .services-offered-cards p::before {
+  content: " ✔";
+  color: #4f8ef7;
+  margin-right: 0.5rem;
+}
+
+/* === CONTACT and SCHED SECTION === */
+.sched-and-contact_form {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  padding: 1rem 5rem;
+  max-width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+.sched-and-contact_form .sched-and-contact_form---container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+#schedule-and-contact_info {
+  width: 50%;
+}
+.sched-and-contact_form h2 {
+  color: #4f8ef7;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+#schedule-and-contact_info ul {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  text-align: center;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+#schedule-and-contact_info ul i {
+  padding: 0.5rem;
+  background-color: #4f8ef7;
+  border-radius: 50%;
+  color: #f9fbfd;
+}
+/* === CONTACT FORM === */
+#contact-form,
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+#contact-form input {
+  margin: 1rem 0;
+  height: 5vh;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e3eaf5;
+  border-radius: 5px;
+}
+#contact-form #userMESSAGE {
+  margin: 1rem 0;
+  height: 100px;
+  width: 100%;
+  padding: 1rem;
+  resize: none;
+  border: 1px solid #e3eaf5;
+  border-radius: 5px;
+}
+#contact-form button {
+  height: 5vh;
+  width: 100%;
+  background-color: #4f8ef7;
+  color: white;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+/*  === FOOTER === */
+footer {
+  background-color: #e3eaf5;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+  header {
+    height: 80vh;
+  }
+  @media screen and (max-width: 320px) {
+    header {
+      height: 90vh;
+    }
+  }
+  .closeBtn {
+    font-size: 3rem;
+    color: #333;
+    margin-left: 70%;
+  }
+  .blur.active {
+    background-color: #33333339;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    transition: 0.3s ease-in-out;
+  }
+  .off-screen-menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    left: 100%;
+    width: 50%;
+    height: 100vh;
+    padding: 0.5rem 1rem;
+    background-color: #f9fbfd;
+    box-shadow: 0 0 2px 2px #33333339;
+    transition: 0.3s ease-in-out;
+  }
+  .off-screen-menu.active {
+    left: 50%;
+  }
+  .off-screen-menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .off-screen-menu ul a {
+    color: #333;
+  }
+  #mobile-nav {
+    display: none;
+    background-color: #f9fbfd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 3px 3px #33333339;
+    z-index: 98;
+  }
+  #desktop-nav {
+    display: none;
+  }
+  .brightMind-logo img {
+    width: 150px;
+  }
+  .mobile-nav_hambtn {
+    color: #333;
+    font-size: 3rem;
+    padding: 0 1.5rem;
+  }
+  /* === HERO/BANNER ==== */
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.348);
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+  .herobanner-intro {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+    top: 40%;
+    left: 2rem;
+    z-index: 2;
+    max-width: 100%;
+  }
+  @media screen and (max-width: 320px) {
+    .herobanner-intro {
+      top: 35%;
+    }
+  }
+  .herobanner-intro h1 {
+    font-size: 1.8rem;
+  }
+  .herobanner-intro p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  .herobanner-intro a {
+    margin-top: 0.5rem;
+    padding: 0.5rem 2rem;
+    background-color: #4f8ef7;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    width: auto;
+  }
+  /* === ABOUT US === */
+  #about {
+    padding: 2rem;
+    max-width: 100%;
+  }
+  #about .about-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    gap: 2rem;
+  }
+  #about h2 {
+    font-size: 1.5rem;
+  }
+  #about .about-left {
+    width: 100%;
+  }
+  #about .about-left .brightmind-title {
+    font-size: 1.2rem;
+  }
+  #about .about-right {
+    width: 100%;
+  }
+  #about .about-right img {
+    margin-top: 0;
+    width: 100%;
+  }
+  /* === SERVICES === */
+  #services {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 2rem;
+  }
+  #services .services-title {
+    width: 90vw;
+  }
+  #services h2 {
+    font-size: 1.5rem;
+    color: #4f8ef7;
+  }
+  #services p {
+    font-size: 1rem;
+  }
+  #services .services-offered-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+    align-items: center;
+  }
+  #services .services-offered-container .services-offered-cards {
+    width: 90vw;
+    height: 20rem;
+    gap: 2rem;
+  }
+  #services .services-offered-container .services-offered-cards:hover {
+    box-shadow: none;
+  }
+  /* === CONTACT and SCHED SECTION === */
+  .sched-and-contact_form {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    padding: 1rem 2rem;
+    max-width: 100%;
+    height: auto;
+    justify-content: start;
+    align-items: start;
+    text-align: justify;
+  }
+  .sched-and-contact_form .sched-and-contact_form---container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+  #schedule-and-contact_info {
+    display: flex;
+    padding-top: 2rem;
+    flex-direction: column;
+    width: 100%;
+  }
+  .sched-and-contact_form h2 {
+    color: #4f8ef7;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  #schedule-and-contact_info ul {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    text-align: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+  }
+  #schedule-and-contact_info ul i {
+    padding: 0.5rem;
+    background-color: #4f8ef7;
+    border-radius: 50%;
+    color: #f9fbfd;
+  }
+  /* === CONTACT FORM === */
+  #contact-form,
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 2rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+  /* === NAVIGATION === */
+  .closeBtn {
+    font-size: 3rem;
+    color: #333;
+    margin-left: 70%;
+  }
+  .blur.active {
+    background-color: #33333339;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    transition: 0.3s ease-in-out;
+  }
+  .off-screen-menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    left: 100%;
+    width: 50%;
+    height: 100vh;
+    padding: 0.5rem 1rem;
+    background-color: #f9fbfd;
+    box-shadow: 0 0 2px 2px #33333339;
+    transition: 0.3s ease-in-out;
+  }
+  .off-screen-menu.active {
+    left: 50%;
+  }
+  .off-screen-menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .off-screen-menu ul a {
+    color: #333;
+  }
+  #mobile-nav {
+    display: none;
+    background-color: #f9fbfd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 3px 3px #33333339;
+    z-index: 98;
+  }
+  #desktop-nav {
+    display: none;
+  }
+  .brightMind-logo img {
+    width: 150px;
+  }
+  .mobile-nav_hambtn {
+    color: #333;
+    font-size: 3rem;
+    padding: 0 3.5rem;
+  }
+
+  /* === HERO SECTION === */
+  .herobanner-intro {
+    top: 45;
+    left: 4rem;
+    max-width: 80%;
+  }
+  .herobanner-intro h1 {
+    font-size: 2.5rem;
+  }
+  .herobanner-intro p {
+    font-size: 1.3rem;
+  }
+  .herobanner-intro a {
+    padding: 0.5rem 3rem;
+    font-size: 1rem;
+  }
+
+  /* === ABOUT US === */
+  #about {
+    padding: 3rem 4rem;
+  }
+  #about .about-container {
+    gap: 5rem;
+    flex-direction: column;
+  }
+  #about .about-left,
+  #about .about-right {
+    width: 100%;
+  }
+  #about .about-right img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  /* === SERVICES === */
+  #services {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    padding: 5rem;
+    padding-top: 2rem;
+    max-width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+  }
+  #services .services-title {
+    text-align: center;
+  }
+  #services h2 {
+    font-size: 1.8rem;
+    color: #4f8ef7;
+  }
+  #services .services-offered-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+    align-items: center;
+  }
+  #services .services-offered-container .services-offered-cards {
+    background-color: #e1ecfc;
+    border-radius: 15px;
+    width: 45vw;
+    height: 25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    transition: 0.3s ease-in-out;
+  }
+  #services .services-offered-container .services-offered-cards:hover {
+    box-shadow: 0 0 3px 3px #33333339;
+  }
+  #services .services-offered-container .services-offered-cards img {
+    width: 70%;
+  }
+  #services .services-offered-container .services-offered-cards p {
+    color: #4f8ef7;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-left: 0;
+  }
+  #services .services-offered-container .services-offered-cards p::before {
+    content: " ✔";
+    color: #4f8ef7;
+    margin-right: 0.5rem;
+  }
+  /* === CONTACT / SCHED === */
+  .sched-and-contact_form {
+    padding: 2rem;
+  }
+  .sched-and-contact_form .sched-and-contact_form---container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  #schedule-and-contact_info {
+    width: 100%;
+    padding-top: 2rem;
+  }
+
+  #contact-form,
+  form {
+    width: 100%;
+  }
+  /*  === CONTACT FORM === */
+  #contact-form,
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 3rem;
+  }
+
+  /* === FOOTER === */
+  footer {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+}
