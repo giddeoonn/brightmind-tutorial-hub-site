@@ -23,6 +23,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  max-height: 900px;
   color: white;
   text-align: center;
 }
@@ -57,7 +58,13 @@ header {
   gap: 2rem;
   font-size: 1.5rem;
   color: #333;
+  transition: 0.3s ease;
+  font-weight: 600;
 }
+.desktop-nav-links a:hover {
+  color: #4f8ef7;
+}
+
 /* herobanner */
 .overlay {
   position: absolute;
@@ -68,17 +75,23 @@ header {
   top: 0;
   left: 0;
 }
-.herobanner-intro {
-  position: absolute;
+/* HERO BANNER */
+#herobanner {
+  position: relative;
+  height: 100vh;
+  max-height: 900px;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  top: 40%;
-  left: 5rem;
+  text-align: start;
+}
+.herobanner-intro {
+  position: relative;
   z-index: 2;
-  max-width: 50%;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: auto;
 }
 .herobanner-intro h1 {
   font-size: 3rem;
@@ -88,16 +101,13 @@ header {
   margin-top: 0.5rem;
 }
 .herobanner-intro a {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   padding: 0.5rem 5rem;
   background-color: #4f8ef7;
   color: white;
   font-weight: 600;
   border-radius: 5px;
-  width: 50%;
-}
-.container {
-  width: 100%;
+  display: inline-block;
 }
 
 /* ABOUT US SECTION */
@@ -287,11 +297,12 @@ footer {
     scroll-padding-top: 5rem;
   }
   header {
-    height: 80vh;
+    height: 100vh;
+    position: relative;
   }
   @media screen and (max-width: 320px) {
     header {
-      height: 90vh;
+      height: 100vh;
     }
   }
   .closeBtn {
@@ -360,31 +371,12 @@ footer {
     padding: 0 1.5rem;
   }
   /* === HERO/BANNER ==== */
-  .overlay {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.348);
-    z-index: 1;
-    top: 0;
-    left: 0;
-  }
   .herobanner-intro {
-    position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    text-align: left;
-    top: 40%;
-    left: 2rem;
+    top: 3rem;
     z-index: 2;
     max-width: 100%;
-  }
-  @media screen and (max-width: 320px) {
-    .herobanner-intro {
-      top: 35%;
-    }
   }
   .herobanner-intro h1 {
     font-size: 1.8rem;
@@ -394,13 +386,14 @@ footer {
     margin-top: 0.5rem;
   }
   .herobanner-intro a {
-    margin-top: 0.5rem;
+    text-align: center;
+    margin-top: 2rem;
     padding: 0.5rem 2rem;
     background-color: #4f8ef7;
     color: white;
     font-weight: 600;
     border-radius: 5px;
-    width: auto;
+    width: 10rem;
   }
   /* === ABOUT US === */
   #about {
